@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Pulse-X</title>
+		<link rel="shortcut icon" href="{{ url_for('static', filename='diabetes-favicon.ico') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+		<script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	</head>
+
+    <body>
+
+        <!-- Website Title -->
+		<div class="container">
+            <h2 class='container-heading'><span class="heading_font">Pulse-X</span></h2>
+            <div class='description'>
+    			<p>A Machine Learning Web App for predicting chances of having Heart Disease.</p>
+    		</div>
+    	</div>
+
+		<!-- Result -->
+		<div class="results">
+			{% if prediction==1 %}
+				<h2>Prediction: <span class='danger'>Oops! You have chances of Heart Disease.</span></h2>
+			        <br>
+			        <div class = "suggest">
+					<h3><p style="color:black;"> Some Dietary Suggestions to keep you fit -</p><h3>
+				        <ul style="color:green;padding: 20px 300px 20px;text-align:left;">
+						<li>Eat Green and Leafy Vegatables to increase blood Flow.</li>
+                                                <li>Avoid oily and junk food and more of vitamins and proteins.</li>
+                                                <li>Exercise daily for atleast an hour.</li>
+						<li>Include fruits and nuts in your diet.</li>
+					</ul>
+                                </div>  			        
+				
+			{% elif prediction==0 %}
+				<h1>Prediction: <span class='safe'>Great! You don't have chances of Heart Disease.</span></h1>
+				
+			{% endif %}
+		</div>               
+		
+
+	</body>
+</html>
